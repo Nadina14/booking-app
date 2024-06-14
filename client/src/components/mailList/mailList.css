@@ -21,10 +21,11 @@
   
   .mailInputContainer>button{
     height: 50px;
+    width: 100px;
     background-color: #0071c2;
     color: white;
     font-weight: 500;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
   }
