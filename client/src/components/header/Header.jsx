@@ -14,6 +14,7 @@ import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
 import { Link, useNavigate } from "react-router-dom";
+import { useUser } from "../../context/UserContext.js";
 
 const Header = ({ type }) => {
   const [destination, setDestination] = useState("");
@@ -47,7 +48,10 @@ const Header = ({ type }) => {
     navigate("/hotels", { state: { destination, date, options } });
   };
 
+  const { user } = useUser();
+
   return (
+   
     <div className="header">
       <div
         className={
@@ -85,7 +89,7 @@ const Header = ({ type }) => {
               Get rewarded for your travels – unlock instant savings of 10% or
               more with a free Nadi's Booking account
             </p>
-            <Link to='/registration'><button className="headerBtn">Sign in / Register</button></Link>
+            <Link to='/signup'><button className="headerBtn">Sign in / Register</button></Link>
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />

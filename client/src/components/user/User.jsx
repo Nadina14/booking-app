@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useUser } from "../../context/UserContext.js";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import validator from "valid"
+import validator from "validator";
 import "./user.css";
 
 

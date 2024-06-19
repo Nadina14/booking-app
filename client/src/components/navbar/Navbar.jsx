@@ -4,7 +4,7 @@ import { useUser } from "../../context/UserContext.js";
 
 const Navbar = () => {
   
-  const { user } = useUser();;
+  const { user } = useUser();
   
   return (
     <div className="navbar">
