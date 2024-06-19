@@ -2,30 +2,30 @@ import bcrypt from "bcrypt";
 import dotenv from "dotenv";
 dotenv.config();
 import jwt from "jsonwebtoken"
-const {PEPPER_KEY, SECRET_KEY} = process.env
+const {JWT_KEY} = process.env
 
 export const hiddenPassword = async (password) => {
     const salt = await bcrypt.genSalt(15);
 
-    const combined = password + PEPPER_KEY;
+    const combined = password + JWT_KEY;
 
     const hashedPassword = await bcrypt.hash(combined,salt)
     return hashedPassword;
 }
 
 export const comparePassword = async (password, hashedPassword) => {
-    const combined = password + PEPPER_KEY;
+    const combined = password + JWT_KEY;
     const match= await bcrypt.compare(combined, hashedPassword);
     return match;
 }
 
 export const generateToken = (_id) => {
-    const token = jwt.sign({_id}, SECRET_KEY, {expiresIn: "30d"})
+    const token = jwt.sign({_id}, JWT_KEY, {expiresIn: "30d"})
     return token
 }
 
 export const verifyToken = (token) => {
-    const { _id } = jwt.verify (token, SECRET_KEY)
+    const { _id } = jwt.verify (token, JWT_KEY)
     return _id;
 }
 

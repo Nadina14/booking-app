@@ -4,8 +4,15 @@ import validator from "validator";
 import { comparePassword, hiddenPassword } from "../library/cryptingPass.js";
 const { isStrongPassword, isEmail } = validator;
 
+const strongPasswordOptions = {
+  minLength: 8,
+  minLowerCase: 1,
+  minUpperCase: 1,
+  minNumbers: 1,
+  minSymbols: 2,
+};
 
-const UserSchema = new mongoose.Schema(
+const UserSchema = new Schema(
   {
     username: {
       type: String,
@@ -17,32 +24,16 @@ const UserSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
-    country: {
-      type: String,
-      required: true,
-    },
-    img: {
-      type: String,
-    },
-    city: {
-      type: String,
-      required: true,
-    },
-    phone: {
-      type: String,
-      required: true,
-    },
     password: {
       type: String,
       required: true,
     },
-    isAdmin: {
-      type: Boolean,
-      default: false,
-    },
+    created: {
+      type: Date,
+      default: () => Date.now(),
+      immutable: true,
   },
-  { timestamps: true }
-);
+});
 
 UserSchema.statics.findByEmail = function (email) {
   return this.findOne({ email });
@@ -87,15 +78,13 @@ UserSchema.statics.logIn = async function (email, password) {
   const passwordMatch = await comparePassword(password, user.password);
   if (!passwordMatch) {
     failError();
-  }
-
+  };
   return user;
 };
 
 UserSchema.methods.clean = function () {
   const user = this.toObject();
   delete user.password;
-  delete user.__v;
   delete user._id;
   return user;
 };
