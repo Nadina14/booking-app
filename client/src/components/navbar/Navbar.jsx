@@ -1,11 +1,11 @@
 import "./navbar.css";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext.js";
+import { useUser } from "../../context/UserContext.js";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
-
+  
+  const { user } = useUser();;
+  
   return (
     <div className="navbar">
       <div className="navContainer">
@@ -14,7 +14,7 @@ const Navbar = () => {
         </Link>
         {user ? user.username : (
           <div className="navItems">
-            <Link to="/registration"><button className="navButton">Register</button></Link>
+            <Link to="/signup"><button className="navButton">Register</button></Link>
             <Link to="/login"><button className="navButton">Login</button></Link>
           </div>
         )}

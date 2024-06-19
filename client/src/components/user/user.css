@@ -1,0 +1,136 @@
+.user-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 80px;
+  }
+  
+  .user-form-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    border: 1px solid black;
+    background-color: #4a88fa;
+    padding: 2rem;
+    border: .5px solid white;
+    width: 350px;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 0px 10px cornflowerblue;
+    filter: drop-shadow(4px 4px 10px cornflowerblue);
+    
+  }
+  
+  .no-account {
+    padding-top: .5rem;
+    
+    color: white;
+  }
+  .no-account * {
+    color: white;
+    text-decoration: underline;
+  }
+  
+  .user-form-container form h6 {
+    text-align: center;
+  }
+  
+  #div-loading {
+    padding-top: 1.8rem;
+    width: 60px;
+  }
+  
+  #loading {
+    width: 100%;
+    
+  }
+  
+  .user-form-container form input {
+    outline: none;
+    width: 250px;
+    height: 30px;
+    border: none;
+    padding: .5rem;
+    border-radius: 61px;
+    background-color: #efefef;
+    transition: .3s ease-out;
+  }
+  
+  .user-form-container form input:focus {
+    transform: scaleY(1.1);
+    background-color: rgba(245, 245, 245, 0.250);
+    border-radius: 6px;
+  }
+  
+  .error-dont-match {
+    color: #efefef;
+    font-size: 1rem;
+    padding-top: 1rem;
+    font-weight: 300;
+  }
+  
+  .user-form-container form h1 {
+    font-size: 2.5rem;
+    color: #efefef;
+  
+  }
+  
+  .form-div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  
+  .form-div label {
+    font-weight: 600;
+    color: #efefef;
+  }
+  
+  .login-signup-btn {
+    padding: 0.7rem 1.4rem;
+    border-radius: 31px;
+    outline: none;
+    border: none;
+    background-color: #70b3ff;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0px 10px rgba(233, 218, 218, 0.938);
+    cursor: pointer;
+    transition: all .2s ease-out;
+  }
+  
+  .login-signup-btn:hover {
+    border-radius: 6px;
+  }
+  
+  .login-signup-btn a {
+    color: white;
+  }
+  
+  .signup-back-div {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+  }
+  
+  .signup-btn {
+    padding: 0.55rem 1.5rem;
+    border-radius: 81px;
+    border: none;
+    font-weight: 600;
+    background-color: #010214;
+    color: #efefef;
+    cursor: pointer;
+    transition: all .1s ease-out;
+  }
+  
+  .back-btn {
+    padding: 0.55rem 1.5rem;
+    border-radius: 81px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+  }
