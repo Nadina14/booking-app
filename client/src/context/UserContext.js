@@ -27,7 +27,7 @@ export const UserProvider = ({ children }) => {
 
     try {
       const body = { username, email, password };
-      const { data } = await axios.post(`/authentication/signup`, body);
+      const { data } = await axios.post(`/signup`, body);
       localStorage.setItem('token', data.token); 
       setUser(data.user); 
     } catch (error) {
@@ -46,7 +46,7 @@ export const UserProvider = ({ children }) => {
   
     try {
       const body = { email, password };
-      const { data } = await axios.post(`/authentication/login`, body);
+      const { data } = await axios.post(`/login`, body);
       localStorage.setItem('token', data.token); 
       setUser(data.user); 
     } catch (error) {
