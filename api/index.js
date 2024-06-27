@@ -12,7 +12,7 @@ import roomsRoute from "./routes/rooms.js";
 const app = express();
 dotenv.config();
 
-const { EXPRESS_PORT, MONGO_URI } = process.env;
+const { MONGO_URI } = process.env;
 
 const connect = async () => {
     try {
@@ -32,14 +32,6 @@ app.use(cors())
 app.use(cookieParser())
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: ["https://bookig-app.vercel.app"],
-    credentials: true,
-  })
-); 
-
-
 app.use("/auth", authRoute);
 app.use("/users", usersRoute);
 app.use("/hotels", hotelsRoute);
@@ -56,7 +48,7 @@ app.use((err, req, res, next) => {
     });
   });
   
-  app.listen(EXPRESS_PORT, () => {
+  app.listen(8800, () => {
     connect();
     console.log("Connected to backend.");
   });
