@@ -34,7 +34,7 @@ app.use(express.json());
 
 app.use("/auth", authRoute);
 app.use("/users", usersRoute);
-app.use("/api/hotels", hotelsRoute);
+app.use("/hotels", hotelsRoute);
 app.use("/rooms", roomsRoute);
 
 app.use((err, req, res, next) => {
@@ -48,7 +48,7 @@ app.use((err, req, res, next) => {
     });
   });
   
-  app.listen(3000, () => {
+  app.listen(8800, () => {
     connect();
     console.log("Connected to backend.");
   });

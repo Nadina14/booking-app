@@ -1,0 +1,16 @@
+POST http://localhost:8800/hotels
+
+{
+    "name": "Hotel Jane",
+    "type": "hotel",
+    "city": "Berlin",
+    "address": "somewhere",
+    "distance": "500",
+    "title": "Best Hotel in town",
+    "desc": "description",
+    "cheapestPrice": 100
+}
+
+###
+
+GET http://localhost:8800/hotels
