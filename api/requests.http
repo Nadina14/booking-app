@@ -3,7 +3,7 @@ POST http://localhost:8800/hotels
 {
     "name": "Hotel Jane",
     "type": "hotel",
-    "city": "Berlin",
+    "city": "berlin",
     "address": "somewhere",
     "distance": "500",
     "title": "Best Hotel in town",
@@ -14,3 +14,7 @@ POST http://localhost:8800/hotels
 ###
 
 GET http://localhost:8800/hotels
+
+###
+
+GET http://localhost:8800/hotels/countByCity?cities=berlin,london,madrid
